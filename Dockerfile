@@ -20,4 +20,4 @@ COPY /conf /conf
 #声明需要暴露的端口
 EXPOSE  7070
 #配置容器启动后执行的命令,并指定使用项目外部的配置文件
-ENTRYPOINT  ["java","-Xms256m","-Xmx256m","-Djava.security.egd=file:/dev/./urandom","-jar","/target/my-app.jar","--spring.config.location=/conf/application.yml"]
+ENTRYPOINT  ["java","-Xms256m","-Xmx256m","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar","--spring.config.location=/conf/application.yml"]
