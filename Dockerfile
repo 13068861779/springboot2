@@ -12,7 +12,7 @@ RUN mvn clean package
 #将本地文件挂载到当前容器
 VOLUME   /tmp
 #复制jar文件和配置文件所在的目录到容器里
-ADD  my-app.jar  /target/app.jar
+ADD  /target/my-app.jar  /app.jar
 ADD  conf       /conf
 #声明需要暴露的端口
 EXPOSE  7070
