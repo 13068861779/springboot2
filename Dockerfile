@@ -1,13 +1,13 @@
 
 
 # First stage: complete build environment
-FROM maven
+FROM maven:3.5.0-jdk-8-alpine AS builder
 # 进入容器的app目录, 然后拷贝当前目录(根目录)的所有文件到容器的当前目录中(/app)
 COPY . .
 RUN mvn clean package
 
 
-FROM  java:8
+From openjdk:8-jre-alpine
 #将本地文件挂载到当前容器
 #VOLUME   /tmp
 #复制jar文件和配置文件所在的目录到容器里
